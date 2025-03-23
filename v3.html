@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Prity</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe6f2;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #ff4081;
+            font-size: 3rem;
+            margin-top: 20px;
+        }
+        .message {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 20px;
+        }
+        .gallery img {
+            width: 250px;
+            height: auto;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        .heart {
+            font-size: 100px;
+            color: #ff4081;
+            animation: heartbeat 1.5s infinite alternate;
+        }
+        .button {
+            background-color: #ff4081;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 30px;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+            border: none;
+            margin-top: 20px;
+        }
+        .button:hover {
+            background-color: #d63384;
+        }
+
+        /* Countdown Timer */
+        .countdown {
+            font-size: 24px;
+            color: #d63384;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        /* Popup Form */
+        .popup {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            max-width: 400px;
+        }
+        .popup .button {
+            width: 100%;
+            margin-top: 10px;
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .hidden {
+            display: none;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+    </style>
+</head>
+<body>
+    <h1>Happy Birthday, Anzuman Ara Prity! 🎉</h1>
+    <p class="message">Happy Birthday to the most amazing girl! 🎉 You’re not just beautiful, but you’re also strong, smart, and inspiring. I hope this year brings you all the happiness you deserve and more! Keep shining and making the world a better place with your kindness and charm. 💖🎂🎈 💖</p>
+
+    <div class="countdown" id="countdown"></div>
+
+    <div class="gallery">
+        <img src="https://github.com/nahidrabbe01732/You-and-Me.html/blob/59ffaea7ffdc6c09cdf788e556806af939cd5fba/prity.JPG?raw=true" alt="Prity">
+    </div>
+
+    <div class="heart">❤️</div>
+
+    <button class="button" onclick="openPopup()">Wish Prity!</button>
+
+    <div class="popup" id="wishPopup">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <h2>Send Your Wish</h2>
+        <p>Click below to wish Prity:</p>
+        <button class="button" onclick="window.location.href='https://m.me/ridhita.ahmed.754#'">Wish Prity on Messenger</button>
+        <button class="button" onclick="window.location.href='tel:+8801872616750'">Wish Prity by Phone (+8801872616750)</button>
+    </div>
+
+    <script>
+        function countdownTimer() {
+            const birthday = new Date('March 28, 2025 00:00:00').getTime();
+            const now = new Date().getTime();
+            const timeLeft = birthday - now;
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = `🎂 ${days}d ${hours}h ${minutes}m ${seconds}s until Prity's Birthday! 🎉`;
+
+            setTimeout(countdownTimer, 1000);
+        }
+
+        countdownTimer();
+
+        function openPopup() {
+            document.getElementById("wishPopup").style.display = "block";
+        }
+
+        function closePopup() {
+            document.getElementById("wishPopup").style.display = "none";
+        }
+    </script>
+</body>
+</html>
